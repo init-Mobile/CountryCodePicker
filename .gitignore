@@ -7,3 +7,7 @@ packages
 .vscode
 *.lock
 .dart_tool/
+/.fvm/
+/ios/Flutter/flutter_export_environment.sh
+/ios/Flutter/Generated.xcconfig
+/android/local.properties

@@ -106,10 +106,13 @@ class _MyAppState extends State<MyApp> {
                 favorite: ['+39', 'FR'],
                 countryFilter: ['IT', 'FR'],
                 showFlagDialog: false,
-                comparator: (a, b) => b.name.compareTo(a.name),
+                comparator: (a, b) => b.name != null && a.name != null
+                    ? b.name!.compareTo(a.name!)
+                    : (a.name == null)
+                        ? -1
+                        : 1,
                 //Get the country information relevant to the initial selection
-                onInit: (code) =>
-                    print("on init ${code.name} ${code.dialCode} ${code.name}"),
+                onInit: (code) => print("on init ${code?.name} ${code?.dialCode} ${code?.name}"),
               ),
               CountryCodePicker(
                 onChanged: print,
